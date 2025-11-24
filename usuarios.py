@@ -1,8 +1,8 @@
 # usuarios.py
 
 usuarios = [
-    {'idUsuario': 1, 'nombreUsuario': 'vblumenthal', 'contrasenia': '123'},
-    {'idUsuario': 2, 'nombreUsuario': 'ljamuy', 'contrasenia': '456'},
-    {'idUsuario': 3, 'nombreUsuario': 'dtua', 'contrasenia': '789'},
-    {'idUsuario': 4, 'nombreUsuario': 'balegre', 'contrasenia': '012'}
+    {'idUsuario': 1, 'nombreUsuario': 'palzugaray', 'contrasenia': '987'},
+    {'idUsuario': 2, 'nombreUsuario': 'agettar', 'contrasenia': '654'},
+    {'idUsuario': 3, 'nombreUsuario': 'dabreu', 'contrasenia': '321'},
+    {'idUsuario': 4, 'nombreUsuario': 'mrivera', 'contrasenia': '987'}
 ]

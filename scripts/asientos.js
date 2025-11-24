@@ -7,7 +7,7 @@ const preciosAsientos = {
     paraiso: 2500,
 };
 
-// Diccionario de funciones y sus asientos ocupados
+// Diccionario de funciones y sus asientos ocupados para cada
 const funciones = {
     1: { asientosOcupados: [1, 7, 21, 33, 34, 35, 37, 48, 61, 69, 70, 84, 85, 89, 97] },
     2: { asientosOcupados: [2, 20, 31, 34, 36, 37, 46, 49, 52, 54, 70, 74, 77, 83, 94] },
@@ -76,6 +76,48 @@ document.getElementById('confirm-seats').addEventListener('click', function() {
         localStorage.setItem('functionInfo', JSON.stringify({ name: funcion, date: new Date().toLocaleDateString(), price: precio }));
 
         window.location.href = 'compra.html';
+    } else {
+        alert('Por favor, selecciona un asiento antes de confirmar.');
+    }
+});
+
+document.getElementById('confirm-seats').addEventListener('click', function() {
+    if (selectedSeat) {
+        const funcion = document.getElementById('funcion').selectedOptions[0].value; // Usa .value para obtener el ID de la función
+        const ubicacion = selectedSeat.parentNode.id;
+        const precio = preciosAsientos[ubicacion];
+        const asiento = selectedSeat.textContent;
+
+        // Crear el objeto con los datos a enviar
+        const datosReserva = {
+            funcion_id: funcion,
+            asiento_id: parseInt(asiento) // Asegúrate de que el ID del asiento sea un número
+        };
+
+        // Enviar la solicitud POST al backend para reservar el asiento
+        fetch('http://localhost:3000/reservar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datosReserva)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error); // Mostrar error si hay
+            } else {
+                alert(data.message); // Confirmar la reserva
+                selectedSeat.classList.add('taken'); // Marcar el asiento como ocupado
+                selectedSeat.classList.remove('available');
+                selectedSeat.disabled = true; // Deshabilitar el botón de asiento
+                // Aquí puedes redirigir al usuario a la página de compra o realizar cualquier otra acción
+            }
+        })
+        .catch(error => {
+            console.error('Error al reservar el asiento:', error);
+            alert('Ocurrió un error al reservar el asiento. Inténtalo de nuevo.');
+        });
     } else {
         alert('Por favor, selecciona un asiento antes de confirmar.');
     }

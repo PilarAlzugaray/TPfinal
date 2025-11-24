@@ -1,4 +1,4 @@
-    /* Global Styles */
+/* estilos globales pagina */
     * {
         margin: 0;
         padding: 0;
@@ -24,7 +24,7 @@
     /* Header Styles */
     /* Header Styles con imagen de fondo */
     header {
-        background-image: url('../images/teatro.jpeg'); /* Ruta de la imagen */
+        background-image: url('../images/saladecine.jpeg'); /* Ruta de la imagen */
         background-size: cover; /* Ajusta la imagen para cubrir todo el header */
         background-position: center; /* Centra la imagen */
         color: #ffffff; /* Texto en blanco para contrastar con la imagen */
@@ -214,14 +214,14 @@
         margin-bottom: 5px;
     }
 
-    form input, form button {
+    form input, form button, form select { /* Agregué form select */
         padding: 10px;
         margin-bottom: 15px;
         border-radius: 5px;
         border: 1px solid #000000; /* Borde negro */
     }
 
-    form input {
+    form input, form select { /* Apliqué estilos a form select */
         background-color: #f4f4f4; /* Ligero gris */
         font-size: 1rem;
         color: #000000;
@@ -534,12 +534,12 @@
     }
     /* Colores de fondo por sección */
     .section.platea {
-        background-color: rgba(239, 152, 152, 0.8); /* Color de fondo para platea */
+        background-color: rgba(239, 152, 216, 0.8); /* Color de fondo para platea */
     }
-    .section.palco-bajo {
-        background-color: rgba(246, 88, 93, 0.8); /* Color de fondo para palco bajo */
+    .section.palcoBajo {
+        background-color: rgba(190, 98, 118, 0.8); /* Color de fondo para palco bajo */
     }
-    .section.palco-alto {
+    .section.palcoAlto {
         background-color: rgba(242, 46, 46, 0.8); /* Color de fondo para palco bajo */
     }
     .section.cazuela {
@@ -573,8 +573,12 @@
     .purchase-section h3 {
         color: #b80000;
         text-align: center;
+        /* Estilo agregado para los títulos de Moneda y Método de Pago */
+        font-size: 1.2em; 
+        margin-top: 15px;
     }
-
+    
+    /* Estilo para los select (Método y Moneda) */
     .purchase-section select, .purchase-section input {
         width: 100%;
         padding: 10px;
@@ -650,83 +654,98 @@
     }
 
 
-/* Resumen de compra*/
-.purchase-summary {
-    background-color: #f8f8f8; /* Fondo suave para destacar */
-    padding: 20px;
-    border-radius: 8px;
-    margin: 30px 0 50px 0; /* Ajuste de margen superior e inferior para separar secciones */
-    color: #333;
-    text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
+    /* Resumen de compra*/
+    .purchase-summary {
+        background-color: #f8f8f8; /* Fondo suave para destacar */
+        padding: 20px;
+        border-radius: 8px;
+        margin: 30px auto 50px auto; /* Centrar y separar secciones */
+        max-width: 600px; /* Asegura que el resumen tenga el mismo ancho que la sección de compra */
+        color: #333;
+        text-align: left; /* Alineación a la izquierda para mejor lectura de datos */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.purchase-summary h3 {
-    color: #b30000; /* Color rojo, siguiendo el tema */
-    font-size: 24px;
-    margin-bottom: 15px; /* Separación con los párrafos */
-}
+    .purchase-summary h3 {
+        color: #b30000; /* Color rojo, siguiendo el tema */
+        font-size: 24px;
+        text-align: center; /* Centrar el título del resumen */
+        margin-bottom: 15px; 
+    }
 
-.purchase-summary p {
-    font-size: 18px;
-    margin: 5px 0; /* Margen pequeño para cada párrafo */
-}
+    .purchase-summary p {
+        font-size: 18px;
+        margin: 10px 0; /* Margen para cada párrafo */
+    }
+    
+    /* Estilos específicos para la cotización y el precio final */
+    #dolarRate {
+        font-weight: bold; /* Destacar la tasa del dólar */
+        color: #008000; /* Color verde para indicar valor */
+        display: inline-block;
+        margin-left: 10px;
+    }
 
+    #finalPriceDisplay {
+        font-size: 20px;
+        font-weight: bold;
+        color: #b80000; /* Destacar el precio final en rojo */
+    }
 
     /* Entrada Confrimada*/
 
-/* Estilos para la sección de Entrada Confirmada */
-.entrada-confirmada {
-    background-color: #ffffff; /* Fondo blanco */
-    color: #333333; /* Texto en gris oscuro */
-    border: 2px solid #b80000; /* Borde rojo teatral */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 30px auto;
-    max-width: 600px; /* Ancho máximo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    text-align: center; /* Centra el contenido */
-}
+    /* Estilos para la sección de Entrada Confirmada */
+    .entrada-confirmada {
+        background-color: #ffffff; /* Fondo blanco */
+        color: #333333; /* Texto en gris oscuro */
+        border: 2px solid #b80000; /* Borde rojo teatral */
+        border-radius: 10px;
+        padding: 20px;
+        margin: 30px auto;
+        max-width: 600px; /* Ancho máximo */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        text-align: center; /* Centra el contenido */
+    }
 
-.entrada-confirmada h2 {
-    font-size: 1.8rem; /* Tamaño del título */
-    color: #b80000; /* Título en rojo teatral */
-    margin-bottom: 15px; /* Espacio inferior */
-}
+    .entrada-confirmada h2 {
+        font-size: 1.8rem; /* Tamaño del título */
+        color: #b80000; /* Título en rojo teatral */
+        margin-bottom: 15px; /* Espacio inferior */
+    }
 
-.entrada-confirmada p {
-    font-size: 1.1rem; /* Tamaño del texto */
-    color: #333333; /* Texto en gris oscuro */
-    margin: 10px 0; /* Espaciado entre párrafos */
-    line-height: 1.6; /* Espacio entre líneas */
-}
+    .entrada-confirmada p {
+        font-size: 1.1rem; /* Tamaño del texto */
+        color: #333333; /* Texto en gris oscuro */
+        margin: 10px 0; /* Espaciado entre párrafos */
+        line-height: 1.6; /* Espacio entre líneas */
+    }
 
-.entrada-confirmada .info-funcion {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #dcdcdc; /* Borde gris claro */
-    border-radius: 8px;
-    background-color: #f9f9f9; /* Fondo gris claro */
-}
+    .entrada-confirmada .info-funcion {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #dcdcdc; /* Borde gris claro */
+        border-radius: 8px;
+        background-color: #f9f9f9; /* Fondo gris claro */
+    }
 
-.entrada-confirmada .info-funcion p {
-    font-size: 1rem;
-    color: #000;
-    margin: 5px 0; /* Espacio entre información */
-}
+    .entrada-confirmada .info-funcion p {
+        font-size: 1rem;
+        color: #000;
+        margin: 5px 0; /* Espacio entre información */
+    }
 
-.confirmar-button {
-    background-color: #d32f2f; /* Botón en rojo */
-    color: #ffffff; /* Texto en blanco */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
+    .confirmar-button {
+        background-color: #d32f2f; /* Botón en rojo */
+        color: #ffffff; /* Texto en blanco */
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
 
-.confirmar-button:hover {
-    background-color: #b71c1c; /* Fondo rojo más oscuro al pasar el mouse */
-}
+    .confirmar-button:hover {
+        background-color: #b71c1c; /* Fondo rojo más oscuro al pasar el mouse */
+    }

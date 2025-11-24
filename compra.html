@@ -9,6 +9,14 @@
 <body>
     <header>
         <h1>Teatro Colonial</h1>
+
+        <nav>
+            <ul>
+                <li><a href="inicio.html" target="_blank">Inicio</a></li>
+                <li><a href="index.html" target="_blank">Iniciar Sesión</a></li>
+                <li><a href="funciones.html" target="_blank">Funciones</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="purchase-section">
@@ -20,6 +28,11 @@
             <option value="credito">Tarjeta de Crédito</option>
         </select>
 
+        <h3>Elegí la moneda de compra</h3>
+        <select id="currencyMethod" required>
+            <option value="USD" selected>Dólares (USD)</option>
+            <option value="ARS">Pesos (ARS)</option>
+        </select>
         <div id="creditOptions" style="display:none;">
             <h3>Información de la Tarjeta</h3>
             <label for="installments">Número de Cuotas:</label>
@@ -60,15 +73,18 @@
 
         <button id="finalizePurchase">Finalizar Compra</button>
     </section>
+    
     <section class="purchase-summary">
         <h3>Resumen de Compra</h3>
         <p id="selectedSeatInfo"></p>
         <p id="functionDateInfo"></p>
-        <p id="totalPriceInfo"></p>
+        <hr>
+        <p>Precio Base (USD): <span id="basePriceUSD"></span></p>
+        <p>Cotización Dólar Blue: <span id="dolarRate">Cargando...</span></p>
+        <p>Precio Final Estimado: <span id="finalPriceDisplay"></span></p> 
     </section>
-
     <footer>
-        <p>Teatro Colonial © 2024. Todos los derechos reservados.</p>
+        <p>Cine Broadway © 2025. Todos los derechos reservados.</p>
     </footer>
 
     <script src="scripts/compra.js"></script>

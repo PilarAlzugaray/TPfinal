@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Actualizar la visualización del carrito
+    // Actualizar la visualización del carrito de compra 
     function updateCartDisplay(musicalName) {
         selectedMusicalElement.textContent = musicalName; // Mostrar el nombre del musical
     }

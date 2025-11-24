@@ -6,7 +6,7 @@ function mostrarDetallesCompra() {
     const detalleCompra = JSON.parse(localStorage.getItem("detalleCompra"));
     const paymentMethod = localStorage.getItem("paymentMethod");
 
-    // Mostrar los datos en el HTML si existen
+    // Mostrar los datos en el HTML si existen //
     if (detalleCompra) {
         document.getElementById("seat").textContent = detalleCompra.asiento || "Asiento no disponible";
         document.getElementById("amount").textContent = detalleCompra.precio || "Monto no disponible";
